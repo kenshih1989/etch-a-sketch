@@ -1,5 +1,5 @@
 const container = document.querySelector('.container');
-let gridSize = 16; // Number of rows/columns in the grid
+let gridSize = 25; // Number of rows/columns in the grid
 
 // Calculate the size of each square based on container width
 let squareSizeWidth = container.clientWidth / gridSize;
@@ -18,7 +18,7 @@ for (let rowIndex = 0; rowIndex < gridSize; rowIndex++) {
         
         // Set the size of the column (square)
         colDiv.style.width = `${squareSizeWidth}px`;   // Set width of each square
-        // colDiv.style.height = `${squareSizeHeight}px`; // Set height of each square
+        colDiv.style.height = `${squareSizeHeight}px`; // Set height of each square
         
         // Append the column to the row
         rowDiv.appendChild(colDiv);
