@@ -24,7 +24,7 @@ function changeGridSize() {
     }
     if (!Number.isInteger(Number(gridSize))) {
         alert(`Only integer number is allowed! Please enter again`);
-        changeGridSize();
+        return changeGridSize();
     } else if (gridSize < 1 || gridSize > 100) {
         alert(`Please enter the size of the grid between 1 to 100`);
         return changeGridSize();
