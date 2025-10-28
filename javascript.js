@@ -14,12 +14,12 @@ btnClear.addEventListener('click', () => {
 })
 
 function changeGridSize() {
-    gridSize = prompt("Enter the size of the grid between 1 to 50");
+    gridSize = prompt("Enter the size of the grid between 1 to 100");
     if (!Number.isInteger(Number(gridSize.trim()))) {
         alert(`Only integer number is allowed! Please enter again`);
         changeGridSize();
-    } else if (gridSize < 1 || gridSize > 50) {
-        alert(`Please enter the size of the grid between 1 to 50`);
+    } else if (gridSize < 1 || gridSize > 100) {
+        alert(`Please enter the size of the grid between 1 to 100`);
         return changeGridSize();
     } else if (gridSize === '') {// Handle empty input
         alert("Please enter a value!");
