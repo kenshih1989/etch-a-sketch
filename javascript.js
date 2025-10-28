@@ -3,8 +3,11 @@ let gridSize = 10; //Default grid size
 const btnNewGrid = document.querySelector('.btnNewGrid');
 btnNewGrid.addEventListener('click', () => {
     gridSize = changeGridSize();
-    clearGrid();
-    generateGrid(gridSize);
+    if (gridSize !== null) {
+        clearGrid();
+        generateGrid(gridSize);
+    }
+
 })
 
 const btnClear = document.querySelector('.btnClear');
@@ -15,14 +18,15 @@ btnClear.addEventListener('click', () => {
 
 function changeGridSize() {
     gridSize = prompt("Enter the size of the grid between 1 to 100");
-    if (!Number.isInteger(Number(gridSize.trim()))) {
+    if (gridSize === '') {// Handle empty input
+        alert("Please enter a value!");
+        return changeGridSize();
+    }
+    if (!Number.isInteger(Number(gridSize))) {
         alert(`Only integer number is allowed! Please enter again`);
         changeGridSize();
     } else if (gridSize < 1 || gridSize > 100) {
         alert(`Please enter the size of the grid between 1 to 100`);
-        return changeGridSize();
-    } else if (gridSize === '') {// Handle empty input
-        alert("Please enter a value!");
         return changeGridSize();
     } else if (gridSize === null) {
         return null; // User cancelled, exit function
